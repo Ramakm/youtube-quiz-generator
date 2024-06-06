@@ -38,7 +38,8 @@
             font-weight: bolder;
             text-align: center;
         }
-        button:active{
+
+        button:active {
             scale: 0.95;
         }
 
@@ -179,6 +180,11 @@
             bottom: 0;
         }
 
+        .ai-quiz-link {
+            color: #aeaeae;
+            margin-top: 1rem;
+        }
+
         @media screen and (max-width: 480px) {
             .home-div {
                 margin-top: -3rem;
@@ -210,6 +216,7 @@
         <p class="text">Transform any YouTube video into an engaging quiz, making learning interactive and fun!</p>
         <input type="text" id="videoUrl" name="videoUrl" placeholder="Enter YouTube Video URL">
         <button id="generateBtn" class="gradient-btn" onclick="generateQuiz()">Generate Quiz</button>
+        <a href="https://aiquizgenerator.vercel.app/" target="_blank" class="ai-quiz-link">✨ Explore our topic-based quiz generator!</a>
     </div>
     <div class="quiz-div hidden">
         <h1 class="gradient-text">Quiz</h1>
