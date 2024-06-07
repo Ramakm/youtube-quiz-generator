@@ -16,7 +16,7 @@ Youtube Video Quiz Generator is a tool to generate quizzes based on a Youtube Vi
 1. Clone the repository:
     ```bash
     git clone https://github.com/neerajkumarc/youtube-quiz-generator
-    cd ai-quiz-generator
+    cd youtube-quiz-generator
     ```
 
 2. Install dependencies:
