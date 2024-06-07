@@ -31,11 +31,12 @@ If yes do the follwoing
 generate 10 quiz related to that data and output the quiz in following text format:
 {"title":"title of the quiz","quizzes": [{"question": "Question 1", "options": ["Option A", "Option B", "Option C", "Option D"], "correct_option": "Option A"}, {"question": "Question 2", "options": ["Option A", "Option B", "Option C", "Option D"], "correct_option": "Option B"}, ..., {"question": "Question 10", "options": ["Option A", "Option B", "Option C", "Option D"], "correct_option": "Option C"}]}.
 If its not educational or it falls in the following categories, vlogs, talks, podcasts, entertainment Output the following text {"error": "Unfortunately, this video does not meet the standards of educational content."}
-NOTE: make sure the output is plain text only do not format in json object`;
+`;
 
         const result = await model.generateContent(prompt);
         const text = result.response.text();
-        res.json(JSON.parse(text));
+        const jsonString = text.replace(/^```json\s*|```$/g, '')
+        res.json(JSON.parse(jsonString));
     } catch (e) {
         console.error(e);
         res.status(500).json({ error: "Sorry, this video can't be processed at this moment." });
